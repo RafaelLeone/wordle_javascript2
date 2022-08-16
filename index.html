@@ -117,8 +117,7 @@
         </div>
     </div>
     <script>
-        let palavra = ['C', 'A', 'L', 'V', 'O']
-        let palavraSecreta = palavra.join('')
+        let palavra = 'CALVO'
         let y = 1
         let contador = 0
         let letras_certas = 0
@@ -135,7 +134,7 @@
                 correto.innerHTML = `<div style="background:blue; id="quadrado1" class="quadrado">${x}</div>`
                 letras_certas++
                 if (letras_certas == 5){
-                alert(`Parabéns você descobriu ${palavraSecreta}`)
+                alert(`Parabéns você descobriu ${palavra}`)
                 }
             }
             if (y % 5 == 0){
