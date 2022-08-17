@@ -7,7 +7,7 @@
     <title>Wordle</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body onkeydown="GetChar(event, exibeAlerta)">
     <div class="all">
         <h1 id="title">Wordle</h1>
 
@@ -157,6 +157,45 @@
             teclado[0].innerHTML = '<h1>Você</h1>'
             teclado[1].innerHTML = '<h1>venceu!</h1>'
             teclado[2].innerHTML = '<h1>Parabains!!</h1>'
+        }
+
+        function GetChar(event, cb){
+            var char = event.keyCode
+            if (char == 65 || char == 66 || char == 67 || char == 68 || 
+                char == 69 || char == 70 || char == 71 || char == 72 || 
+                char == 73 || char == 74 || char == 75 || char == 76 || 
+                char == 77 || char == 78 || char == 79 || char == 80 || 
+                char == 81 || char == 82 || char == 83 || char == 84 || 
+                char == 85 || char == 86 || char == 87 || char == 88 || 
+                char == 89 || char == 90){
+                let correto = document.getElementById(`quadrado${y}`)
+                correto.innerHTML = String.fromCharCode(char)
+                ch = String.fromCharCode(char)
+                
+
+                let letra = palavra[contador]
+                contador++
+                if (contador == 5){
+                    contador = 0
+                }
+                if (ch == letra){
+                    correto.innerHTML = `<div style="background:blue; id="quadrado${y}" class="quadrado">${ch}</div>`
+                    letras_certas++
+                } else if (ch == palavra[0] ||ch == palavra[2] ||ch == palavra[2] ||ch == palavra[3] ||ch == palavra[4]){
+                    correto.innerHTML = `<div style="background:yellow; id="quadrado${y}" class="quadrado">${ch}</div>`
+
+                }
+
+                if (letras_certas == 5){
+                    cb(`Parabéns você descobriu ${palavra}`)
+                } else if (y % 5 == 0){
+                    letras_certas = 0
+                }
+                
+            } else {
+                console.log('inválido')
+            }
+            y++
         }
         
     </script>
