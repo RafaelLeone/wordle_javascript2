@@ -1,3 +1,3 @@
-# Link da página do d4-wordle-rafael-leone>
+# Link da página do wordle_javascript
 
-https://rafaelleone.github.io/d4-wordle-rafael-leone/
+https://rafaelleone.github.io/wordle_javascript/
