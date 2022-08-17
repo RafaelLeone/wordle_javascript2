@@ -117,7 +117,13 @@
         </div>
     </div>
     <script>
-        let palavra = 'CALVA'
+        let palavras = ['SAGAZ', 'AFETO', 'INATO', 'IDEIA', 'PODER', 'MORAL',
+                        'SONHO', 'TEMPO', 'ARDOR', 'FINTA', 'AMORA', 'ARARA',
+                        'MORTE', 'GREGO', 'TURMA', 'CHEIA', 'LINDO', 'POMAR',
+                        'LONGE', 'COSTA', 'BALDE', 'CRAVO', 'BACIA', 'FONTE',
+                        'LOCAL', 'MISTO', 'NUNCA', 'BOLHA', 'BOMBA', 'PONTA']
+        numero = Math.floor(Math.random() * palavras.length);
+        let palavra = palavras[numero]
         let y = 1
         let contador = 0
         let letras_certas = 0
