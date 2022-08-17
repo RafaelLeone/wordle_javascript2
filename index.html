@@ -117,7 +117,7 @@
         </div>
     </div>
     <script>
-        let palavra = 'CALVO'
+        let palavra = 'CALVA'
         let y = 1
         let contador = 0
         let letras_certas = 0
@@ -131,13 +131,16 @@
                 contador = 0
             }
             if (x == letra){
-                correto.innerHTML = `<div style="background:blue; id="quadrado1" class="quadrado">${x}</div>`
+                correto.innerHTML = `<div style="background:blue; id="quadrado${y}" class="quadrado">${x}</div>`
                 letras_certas++
+            } else if (x == palavra[0] ||x == palavra[2] ||x == palavra[2] ||x == palavra[3] ||x == palavra[4]){
+                correto.innerHTML = `<div style="background:yellow; id="quadrado${y}" class="quadrado">${x}</div>`
+
             }
+
             if (letras_certas == 5){
                 cb(`Parabéns você descobriu ${palavra}`)
-            }
-            else if (y % 5 == 0){
+            } else if (y % 5 == 0){
                 letras_certas = 0
             }
             y++
@@ -150,6 +153,10 @@
             }, 0005)
             letras_certas = 0
             y = 100
+            let teclado = document.getElementsByClassName('teclado')
+            teclado[0].innerHTML = '<h1>Você</h1>'
+            teclado[1].innerHTML = '<h1>venceu!</h1>'
+            teclado[2].innerHTML = '<h1>Parabains!!</h1>'
         }
         
     </script>
