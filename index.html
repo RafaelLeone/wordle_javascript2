@@ -60,39 +60,39 @@
         </div>
 
         <div class="teclado">
-            <button onclick="ColocaLetra('Q')" class="tecla">Q</button>
-            <button onclick="ColocaLetra('W')" class="tecla">W</button>
-            <button onclick="ColocaLetra('E')" class="tecla">E</button>
-            <button onclick="ColocaLetra('R')" class="tecla">R</button>
-            <button onclick="ColocaLetra('T')" class="tecla">T</button>
-            <button onclick="ColocaLetra('Y')" class="tecla">Y</button>
-            <button onclick="ColocaLetra('U')" class="tecla">U</button>
-            <button onclick="ColocaLetra('I')" class="tecla">I</button>
-            <button onclick="ColocaLetra('O')" class="tecla">O</button>
-            <button onclick="ColocaLetra('P')" class="tecla">P</button>
+            <button onclick="ColocaLetra('Q', exibeAlerta)" class="tecla">Q</button>
+            <button onclick="ColocaLetra('W', exibeAlerta)" class="tecla">W</button>
+            <button onclick="ColocaLetra('E', exibeAlerta)" class="tecla">E</button>
+            <button onclick="ColocaLetra('R', exibeAlerta)" class="tecla">R</button>
+            <button onclick="ColocaLetra('T', exibeAlerta)" class="tecla">T</button>
+            <button onclick="ColocaLetra('Y', exibeAlerta)" class="tecla">Y</button>
+            <button onclick="ColocaLetra('U', exibeAlerta)" class="tecla">U</button>
+            <button onclick="ColocaLetra('I', exibeAlerta)" class="tecla">I</button>
+            <button onclick="ColocaLetra('O', exibeAlerta)" class="tecla">O</button>
+            <button onclick="ColocaLetra('P', exibeAlerta)" class="tecla">P</button>
         </div>
 
         <div class="teclado">
-            <button onclick="ColocaLetra('A')" class="tecla">A</button>
-            <button onclick="ColocaLetra('S')" class="tecla">S</button>
-            <button onclick="ColocaLetra('D')" class="tecla">D</button>
-            <button onclick="ColocaLetra('F')" class="tecla">F</button>
-            <button onclick="ColocaLetra('G')" class="tecla">G</button>
-            <button onclick="ColocaLetra('H')" class="tecla">H</button>
-            <button onclick="ColocaLetra('J')" class="tecla">J</button>
-            <button onclick="ColocaLetra('K')" class="tecla">K</button>
-            <button onclick="ColocaLetra('L')" class="tecla">L</button>
+            <button onclick="ColocaLetra('A', exibeAlerta)" class="tecla">A</button>
+            <button onclick="ColocaLetra('S', exibeAlerta)" class="tecla">S</button>
+            <button onclick="ColocaLetra('D', exibeAlerta)" class="tecla">D</button>
+            <button onclick="ColocaLetra('F', exibeAlerta)" class="tecla">F</button>
+            <button onclick="ColocaLetra('G', exibeAlerta)" class="tecla">G</button>
+            <button onclick="ColocaLetra('H', exibeAlerta)" class="tecla">H</button>
+            <button onclick="ColocaLetra('J', exibeAlerta)" class="tecla">J</button>
+            <button onclick="ColocaLetra('K', exibeAlerta)" class="tecla">K</button>
+            <button onclick="ColocaLetra('L', exibeAlerta)" class="tecla">L</button>
         </div>
 
         <div class="teclado">
             <button id="enter">ENTER</button>
-            <button onclick="ColocaLetra('Z')" class="tecla">Z</button>
-            <button onclick="ColocaLetra('X')" class="tecla">X</button>
-            <button onclick="ColocaLetra('C')" class="tecla">C</button>
-            <button onclick="ColocaLetra('V')" class="tecla">V</button>
-            <button onclick="ColocaLetra('B')" class="tecla">B</button>
-            <button onclick="ColocaLetra('N')" class="tecla">N</button>
-            <button onclick="ColocaLetra('M')" class="tecla">M</button>
+            <button onclick="ColocaLetra('Z', exibeAlerta)" class="tecla">Z</button>
+            <button onclick="ColocaLetra('X', exibeAlerta)" class="tecla">X</button>
+            <button onclick="ColocaLetra('C', exibeAlerta)" class="tecla">C</button>
+            <button onclick="ColocaLetra('V', exibeAlerta)" class="tecla">V</button>
+            <button onclick="ColocaLetra('B', exibeAlerta)" class="tecla">B</button>
+            <button onclick="ColocaLetra('N', exibeAlerta)" class="tecla">N</button>
+            <button onclick="ColocaLetra('M', exibeAlerta)" class="tecla">M</button>
             <button id="backspace">⌫</button>
         </div>
 
@@ -122,7 +122,7 @@
         let contador = 0
         let letras_certas = 0
 
-        function ColocaLetra(x){
+        function ColocaLetra(x, cb){
             let correto = document.getElementById(`quadrado${y}`)
             correto.textContent = x
             let letra = palavra[contador]
@@ -133,14 +133,23 @@
             if (x == letra){
                 correto.innerHTML = `<div style="background:blue; id="quadrado1" class="quadrado">${x}</div>`
                 letras_certas++
-                if (letras_certas == 5){
-                alert(`Parabéns você descobriu ${palavra}`)
-                }
             }
-            if (y % 5 == 0){
+            if (letras_certas == 5){
+                cb(`Parabéns você descobriu ${palavra}`)
+            }
+            else if (y % 5 == 0){
                 letras_certas = 0
             }
             y++
+        }
+
+        function exibeAlerta(msg){
+            setTimeout(function (){
+                alert(msg)
+                //console.log(msg)
+            }, 0005)
+            letras_certas = 0
+            y = 100
         }
         
     </script>
