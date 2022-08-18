@@ -127,6 +127,7 @@
         let y = 1
         let contador = 0
         let letras_certas = 0
+        let car
 
         function ColocaLetra(x, cb){
             let correto = document.getElementById(`quadrado${y}`)
@@ -167,13 +168,8 @@
 
         function GetChar(event, cb){
             var char = event.keyCode
-            if (char == 65 || char == 66 || char == 67 || char == 68 || 
-                char == 69 || char == 70 || char == 71 || char == 72 || 
-                char == 73 || char == 74 || char == 75 || char == 76 || 
-                char == 77 || char == 78 || char == 79 || char == 80 || 
-                char == 81 || char == 82 || char == 83 || char == 84 || 
-                char == 85 || char == 86 || char == 87 || char == 88 || 
-                char == 89 || char == 90){
+            console.log(y)
+            if (char >= 65 && char <= 90 ){
                 let correto = document.getElementById(`quadrado${y}`)
                 correto.innerHTML = String.fromCharCode(char)
                 ch = String.fromCharCode(char)
@@ -185,9 +181,9 @@
                     contador = 0
                 }
                 if (ch == letra){
-                    correto.innerHTML = `<div style="background:blue; id="quadrado${y}" class="quadrado">${ch}</div>`
+                    correto.innerHTML = `<div style="background:#7FFF00; id="quadrado${y}" class="quadrado">${ch}</div>`
                     letras_certas++
-                } else if (ch == palavra[0] ||ch == palavra[2] ||ch == palavra[2] ||ch == palavra[3] ||ch == palavra[4]){
+                } else if (ch == palavra[0] ||ch == palavra[1] ||ch == palavra[2] ||ch == palavra[3] ||ch == palavra[4]){
                     correto.innerHTML = `<div style="background:yellow; id="quadrado${y}" class="quadrado">${ch}</div>`
 
                 }
@@ -198,11 +194,9 @@
                     letras_certas = 0
                 }
                 y++
-            } else {
-                console.log('inválido')
+
             }
         }
-        
     </script>
 </body>
 </html>
