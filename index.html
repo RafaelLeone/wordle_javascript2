@@ -138,9 +138,9 @@
                 contador = 0
             }
             if (x == letra){
-                correto.innerHTML = `<div style="background:blue; id="quadrado${y}" class="quadrado">${x}</div>`
+                correto.innerHTML = `<div style="background:#7FFF00; id="quadrado${y}" class="quadrado">${x}</div>`
                 letras_certas++
-            } else if (x == palavra[0] ||x == palavra[2] ||x == palavra[2] ||x == palavra[3] ||x == palavra[4]){
+            } else if (x == palavra[0] ||x == palavra[1] ||x == palavra[2] ||x == palavra[3] ||x == palavra[4]){
                 correto.innerHTML = `<div style="background:yellow; id="quadrado${y}" class="quadrado">${x}</div>`
 
             }
