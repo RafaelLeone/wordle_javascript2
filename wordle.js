@@ -6,7 +6,110 @@ var col = 0
 
 var gameOver = false;
 // var word = "SQUID";
-let wordList = ["cigar", "rebut", "sissy", "humph", "awake", "blush", "focal", "evade",]
+let wordList = ['sagaz',
+                'negro',
+                'mexer',
+                'termo',
+                'nobre',
+                'senso',
+                'algoz',
+                'afeto',
+                'plena',
+                'sutil',
+                'vigor',
+                'fazer',
+                'audaz',
+                'assim',
+                'sanar',
+                'inato',
+                'cerne',
+                'fosse',
+                'ideia',
+                'poder',
+                'moral',
+                'desde',
+                'torpe',
+                'muito',
+                'justo',
+                'honra',
+                'sobre',
+                'anexo',
+                'etnia',
+                'sonho',
+                'tange',
+                'lapso',
+                'amigo',
+                'expor',
+                'haver',
+                'tempo',
+                'dengo',
+                'então',
+                'pesar',
+                'ávido',
+                'posse',
+                'genro',
+                'boçal',
+                'coser',
+                'causa',
+                'corja',
+                'dizer',
+                'prole',
+                'tenaz',
+                'dever',
+                'saber',
+                'digno',
+                'ceder',
+                'prado',
+                'comum',
+                'sendo',
+                'temor',
+                'culto',
+                'assaz',
+                'atroz',
+                'mundo',
+                'pauta',
+                'censo',
+                'fugaz',
+                'ainda',
+                'cozer',
+                'valha',
+                'denso',
+                'estar',
+                'forte',
+                'vulgo',
+                'pudor',
+                'regra',
+                'dogma',
+                'louco',
+                'criar',
+                'banal',
+                'impor',
+                'jeito',
+                'ordem',
+                'pedir',
+                'clava',
+                'prosa',
+                'feliz',
+                'servo',
+                'viril',
+                'coisa',
+                'manso',
+                'ontem',
+                'presa',
+                'falar',
+                'cunho',
+                'forma',
+                'dever',
+                'mesmo',
+                'meiga',
+                'afago',
+                'fluir',
+                'venda',
+                'limbo',
+                'posso',
+                'visar',
+                'temer',
+                'acaso',]
 
 // let guessList = ["aahed", "aalii", "aargh", "aarti", "abaca", "abaci", "abacs", "abaft",]
 
@@ -104,6 +207,7 @@ function processInput(e) {
         }
         let currTile = document.getElementById(row.toString() + '-' + col.toString());
         currTile.innerText = "";
+        document.getElementById("answer").innerText = "";
     }
 
     else if (e.code == "Enter") {
@@ -132,10 +236,10 @@ function update() {
     guess = guess.toLowerCase(); //case sensitive
     console.log(guess);
 
-    // if (!wordList.includes(guess)) {
-    //     document.getElementById("answer").innerText = "Not in word list";
-    //     return;
-    // }
+    if (!wordList.includes(guess)) {
+        document.getElementById("answer").innerText = "Not in word list";
+        return;
+    }
     
     //start processing guess
     let correct = 0;
