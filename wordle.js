@@ -1,15 +1,3 @@
-if (localStorage.word0){
-    console.log(localStorage.word0 + 0)
-}
-
-if (localStorage.word1){
-    console.log(localStorage.word1 + 1)
-}
-
-if (localStorage.word2){
-    console.log(localStorage.word2 + 2)
-}
-
 let height = 6
 let width = 5
 
@@ -247,11 +235,14 @@ function update() {
 
     guess = guess.toLowerCase(); //case sensitive
     console.log(guess);
-    localStorage.setItem(`word${row}`, guess);
+    
 
     if (!wordList.includes(guess)) {
         document.getElementById("answer").innerText = "Not in word list";
         return;
+    }
+    if (wordList.includes(guess)) {
+        localStorage.setItem(`word${row}`, guess);
     }
     
     //start processing guess
@@ -322,3 +313,35 @@ function update() {
     row += 1; //start new row
     col = 0; //start at 0 for new row
 }
+
+if (localStorage.word0){
+    console.log(localStorage.word0 + 0)
+    row = 1
+}
+
+if (localStorage.word1){
+    console.log(localStorage.word1 + 1)
+    row = 2
+}
+
+if (localStorage.word2){
+    console.log(localStorage.word2 + 2)
+    row = 3
+}
+
+if (localStorage.word3){
+    console.log(localStorage.word3 + 3)
+    row = 4
+}
+
+if (localStorage.word4){
+    console.log(localStorage.word4 + 4)
+    row = 5
+}
+
+if (localStorage.word5){
+    console.log(localStorage.word5 + 5)
+    row = 6
+}
+
+// localStorage.clear()
