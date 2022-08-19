@@ -1,3 +1,15 @@
+if (localStorage.word0){
+    console.log(localStorage.word0 + 0)
+}
+
+if (localStorage.word1){
+    console.log(localStorage.word1 + 1)
+}
+
+if (localStorage.word2){
+    console.log(localStorage.word2 + 2)
+}
+
 let height = 6
 let width = 5
 
@@ -235,6 +247,7 @@ function update() {
 
     guess = guess.toLowerCase(); //case sensitive
     console.log(guess);
+    localStorage.setItem(`word${row}`, guess);
 
     if (!wordList.includes(guess)) {
         document.getElementById("answer").innerText = "Not in word list";
