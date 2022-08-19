@@ -3,8 +3,13 @@ button {
     border-radius: 4px;
 }
 
-.tabuleiro{
-    text-align: center;
+#tabuleiro{
+    width: 350px;
+    height: 420px;
+    margin: 0 auto;
+    margin-top: 3px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .teclado{
@@ -13,11 +18,19 @@ button {
 }
 
 .quadrado{
-    line-height: 48px;
-    border: 1px solid grey;
-    display: inline-block;
-    width: 48px;
-    height: 48px;
+    /* Box */
+    border: 2px solid lightgray;
+    width: 60px;
+    height: 60px;
+    margin: 2.5px;
+
+    /* Text */
+    color: black;
+    font-size: 36px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .escrito::after{
@@ -32,7 +45,7 @@ button {
 
 .tecla{
     width: 45px;
-    height: 65px;
+    height: 45px;
     margin-right: 3px;
 }
 
@@ -172,4 +185,59 @@ button {
 
 .all{
     position: relative;
+}
+
+.correct {
+    background-color: #6AAA64;
+    color: white;
+    border-color: white;
+}
+
+.present {
+    background-color: #C9B458;
+    color: white;
+    border-color: white;
+}
+
+.absent {
+    background-color: #787C7E;
+    color: white;
+    border-color:white;
+}
+
+
+.keyboard-row {
+    width: 400px;
+
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.key-tile {
+    width: 36px;
+    height: 40px;
+    margin: 1px;
+    border: 1px solid lightgray;
+
+    /* Text */
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.enter-key-tile {
+    width: 76px;
+    height: 40px;
+    margin: 1px;
+    border: 1px solid lightgray;
+
+    /* Text */
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
