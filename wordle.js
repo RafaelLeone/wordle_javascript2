@@ -50,7 +50,9 @@ if (localStorage.data_antiga){
 let height = 6
 let width = 5
 
-// var row = 0
+if(!row){
+    var row = 0
+}
 var col = 0
 
 var gameOver = false;
