@@ -284,6 +284,8 @@ function intialize() {
                 tile.innerText = localStorage.word0[c].toUpperCase();
                 if (tile.innerHTML == word[c]){
                     tile.classList.add("correct");
+                } else if (tile.innerHTML == word[0] || tile.innerHTML == word[1] || tile.innerHTML == word[2] || tile.innerHTML == word[3] || tile.innerHTML == word[4]){
+                    tile.classList.add("present")
                 }
             }else if (r == 0){
                 tile.innerText = ''
@@ -292,6 +294,8 @@ function intialize() {
                 tile.innerText = localStorage.word1[c].toUpperCase();
                 if (tile.innerHTML == word[c]){
                     tile.classList.add("correct");
+                } else if (tile.innerHTML == word[0] || tile.innerHTML == word[1] || tile.innerHTML == word[2] || tile.innerHTML == word[3] || tile.innerHTML == word[4]){
+                    tile.classList.add("present")
                 }
             }else if (r == 1){
                 tile.innerText = ''
@@ -300,6 +304,8 @@ function intialize() {
                 tile.innerText = localStorage.word2[c].toUpperCase();
                 if (tile.innerHTML == word[c]){
                     tile.classList.add("correct");
+                } else if (tile.innerHTML == word[0] || tile.innerHTML == word[1] || tile.innerHTML == word[2] || tile.innerHTML == word[3] || tile.innerHTML == word[4]){
+                    tile.classList.add("present")
                 }
             }else if (r == 2){
                 tile.innerText = ''
@@ -308,6 +314,8 @@ function intialize() {
                 tile.innerText = localStorage.word3[c].toUpperCase();
                 if (tile.innerHTML == word[c]){
                     tile.classList.add("correct");
+                } else if (tile.innerHTML == word[0] || tile.innerHTML == word[1] || tile.innerHTML == word[2] || tile.innerHTML == word[3] || tile.innerHTML == word[4]){
+                    tile.classList.add("present")
                 }
             }else if (r == 3){
                 tile.innerText = ''
@@ -316,6 +324,8 @@ function intialize() {
                 tile.innerText = localStorage.word4[c].toUpperCase();
                 if (tile.innerHTML == word[c]){
                     tile.classList.add("correct");
+                } else if (tile.innerHTML == word[0] || tile.innerHTML == word[1] || tile.innerHTML == word[2] || tile.innerHTML == word[3] || tile.innerHTML == word[4]){
+                    tile.classList.add("present")
                 }
             }else if (r == 4){
                 tile.innerText = ''
@@ -324,6 +334,8 @@ function intialize() {
                 tile.innerText = localStorage.word5[c].toUpperCase();
                 if (tile.innerHTML == word[c]){
                     tile.classList.add("correct");
+                } else if (tile.innerHTML == word[0] || tile.innerHTML == word[1] || tile.innerHTML == word[2] || tile.innerHTML == word[3] || tile.innerHTML == word[4]){
+                    tile.classList.add("present")
                 }
             }else if (r == 5){
                 tile.innerText = ''
