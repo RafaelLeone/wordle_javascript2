@@ -1,13 +1,61 @@
+let data = new Date()
+const options = { year: 'numeric', month: 'numeric', day: 'numeric'};
+data = data.toLocaleDateString(undefined, options)
+console.log(data)
+console.log(localStorage.data_antiga)
+
+if (localStorage.data_antiga){
+    if (localStorage.data_antiga == data){
+        console.log('entrei')
+        if (localStorage.word0){
+            console.log(localStorage.word0 + 0)
+            row = 1
+        }
+
+        if (localStorage.word1){
+            console.log(localStorage.word1 + 1)
+            row = 2
+        }
+
+        if (localStorage.word2){
+            console.log(localStorage.word2 + 2)
+            row = 3
+        }
+
+        if (localStorage.word3){
+            console.log(localStorage.word3 + 3)
+            row = 4
+        }
+
+        if (localStorage.word4){
+            console.log(localStorage.word4 + 4)
+            row = 5
+        }
+
+        if (localStorage.word5){
+            console.log(localStorage.word5 + 5)
+            row = 6
+        }
+    }else{
+        localStorage.clear()
+        localStorage.setItem('data_antiga', data);
+        console.log(localStorage.data_antiga)
+    }
+}else{
+    localStorage.clear()
+    localStorage.setItem('data_antiga', data);
+    console.log(localStorage.data_antiga)
+}
+
 let height = 6
 let width = 5
 
-var row = 0
+// var row = 0
 var col = 0
 
 var gameOver = false;
 // var word = "SQUID";
 let wordList = ['sagaz',
-                'negro',
                 'mexer',
                 'termo',
                 'nobre',
@@ -43,12 +91,9 @@ let wordList = ['sagaz',
                 'haver',
                 'tempo',
                 'dengo',
-                'então',
                 'pesar',
-                'ávido',
                 'posse',
                 'genro',
-                'boçal',
                 'coser',
                 'causa',
                 'corja',
@@ -111,17 +156,117 @@ let wordList = ['sagaz',
                 'temer',
                 'acaso',]
 
+let wordListDay = {'22/08/2022': 'SAGAZ',
+                '23/08/2022': 'MEXER',}
+                // 'termo',
+                // 'nobre',
+                // 'senso',
+                // 'algoz',
+                // 'afeto',
+                // 'plena',
+                // 'sutil',
+                // 'vigor',
+                // 'fazer',
+                // 'audaz',
+                // 'assim',
+                // 'sanar',
+                // 'inato',
+                // 'cerne',
+                // 'fosse',
+                // 'ideia',
+                // 'poder',
+                // 'moral',
+                // 'desde',
+                // 'torpe',
+                // 'muito',
+                // 'justo',
+                // 'honra',
+                // 'sobre',
+                // 'anexo',
+                // 'etnia',
+                // 'sonho',
+                // 'tange',
+                // 'lapso',
+                // 'amigo',
+                // 'expor',
+                // 'haver',
+                // 'tempo',
+                // 'dengo',
+                // 'pesar',
+                // 'posse',
+                // 'genro',
+                // 'coser',
+                // 'causa',
+                // 'corja',
+                // 'dizer',
+                // 'prole',
+                // 'tenaz',
+                // 'dever',
+                // 'saber',
+                // 'digno',
+                // 'ceder',
+                // 'prado',
+                // 'comum',
+                // 'sendo',
+                // 'temor',
+                // 'culto',
+                // 'assaz',
+                // 'atroz',
+                // 'mundo',
+                // 'pauta',
+                // 'censo',
+                // 'fugaz',
+                // 'ainda',
+                // 'cozer',
+                // 'valha',
+                // 'denso',
+                // 'estar',
+                // 'forte',
+                // 'vulgo',
+                // 'pudor',
+                // 'regra',
+                // 'dogma',
+                // 'louco',
+                // 'criar',
+                // 'banal',
+                // 'impor',
+                // 'jeito',
+                // 'ordem',
+                // 'pedir',
+                // 'clava',
+                // 'prosa',
+                // 'feliz',
+                // 'servo',
+                // 'viril',
+                // 'coisa',
+                // 'manso',
+                // 'ontem',
+                // 'presa',
+                // 'falar',
+                // 'cunho',
+                // 'forma',
+                // 'dever',
+                // 'mesmo',
+                // 'meiga',
+                // 'afago',
+                // 'fluir',
+                // 'venda',
+                // 'limbo',
+                // 'posso',
+                // 'visar',
+                // 'temer',
+                // 'acaso',}
+
 // let guessList = ["aahed", "aalii", "aargh", "aarti", "abaca", "abaci", "abacs", "abaft",]
 
 // guessList = guessList.concat(wordList);
 
-var word = wordList[Math.floor(Math.random()*wordList.length)].toUpperCase();
+var word = wordListDay[data];
 console.log(word);
 
 window.onload = function(){
     intialize();
 }
-
 
 function intialize() {
 
@@ -314,34 +459,4 @@ function update() {
     col = 0; //start at 0 for new row
 }
 
-if (localStorage.word0){
-    console.log(localStorage.word0 + 0)
-    row = 1
-}
 
-if (localStorage.word1){
-    console.log(localStorage.word1 + 1)
-    row = 2
-}
-
-if (localStorage.word2){
-    console.log(localStorage.word2 + 2)
-    row = 3
-}
-
-if (localStorage.word3){
-    console.log(localStorage.word3 + 3)
-    row = 4
-}
-
-if (localStorage.word4){
-    console.log(localStorage.word4 + 4)
-    row = 5
-}
-
-if (localStorage.word5){
-    console.log(localStorage.word5 + 5)
-    row = 6
-}
-
-// localStorage.clear()
