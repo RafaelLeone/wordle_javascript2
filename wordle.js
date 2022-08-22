@@ -279,9 +279,58 @@ function intialize() {
             let tile = document.createElement("span");
             tile.id = r.toString() + "-" + c.toString();
             tile.classList.add("tile");
-            tile.innerText = "";
+            // tile.classList.add("correct");
+            if (localStorage.word0 && r == 0){
+                tile.innerText = localStorage.word0[c].toUpperCase();
+                if (tile.innerHTML == word[c]){
+                    tile.classList.add("correct");
+                }
+            }else if (r == 0){
+                tile.innerText = ''
+            }
+            if (localStorage.word1 && r == 1){
+                tile.innerText = localStorage.word1[c].toUpperCase();
+                if (tile.innerHTML == word[c]){
+                    tile.classList.add("correct");
+                }
+            }else if (r == 1){
+                tile.innerText = ''
+            }
+            if (localStorage.word2 && r == 2){
+                tile.innerText = localStorage.word2[c].toUpperCase();
+                if (tile.innerHTML == word[c]){
+                    tile.classList.add("correct");
+                }
+            }else if (r == 2){
+                tile.innerText = ''
+            }
+            if (localStorage.word3 && r == 3){
+                tile.innerText = localStorage.word3[c].toUpperCase();
+                if (tile.innerHTML == word[c]){
+                    tile.classList.add("correct");
+                }
+            }else if (r == 3){
+                tile.innerText = ''
+            }
+            if (localStorage.word4 && r == 4){
+                tile.innerText = localStorage.word4[c].toUpperCase();
+                if (tile.innerHTML == word[c]){
+                    tile.classList.add("correct");
+                }
+            }else if (r == 4){
+                tile.innerText = ''
+            }
+            if (localStorage.word5 && r == 5){
+                tile.innerText = localStorage.word5[c].toUpperCase();
+                if (tile.innerHTML == word[c]){
+                    tile.classList.add("correct");
+                }
+            }else if (r == 5){
+                tile.innerText = ''
+            }
             document.getElementById("board").appendChild(tile);
         }
+        
     }
 
     // Create the key board
@@ -388,6 +437,7 @@ function update() {
         document.getElementById("answer").innerText = "Not in word list";
         return;
     }
+
     if (wordList.includes(guess)) {
         localStorage.setItem(`word${row}`, guess);
     }
@@ -461,4 +511,8 @@ function update() {
     col = 0; //start at 0 for new row
 }
 
-
+if (word.toLowerCase() == localStorage.word0 || word.toLowerCase() == localStorage.word1 || word.toLowerCase() == localStorage.word2 || word.toLowerCase() == localStorage.word3 || word.toLowerCase() == localStorage.word4 || word.toLowerCase() == localStorage.word5){
+    console.log('venceu')
+    row = 13
+    alert('Você venceu o jogo!')
+}
