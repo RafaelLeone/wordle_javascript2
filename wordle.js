@@ -156,19 +156,54 @@ let wordList = ['sagaz',
                 'posso',
                 'visar',
                 'temer',
-                'acaso',]
+                'acaso',
+                'pleno',
+                'puder',
+                'valor',
+                'cisma',
+                'bruma',
+                'lugar',
+                'afins',
+                'certo',
+                'gerar',
+                'obter',
+                'crise',
+                'matiz',
+                'praxe',
+                'senil',
+                'havia',
+                'todos',
+                'fluxo',
+                'enfim',
+                'abrir',
+                'ritmo',
+                'falso',
+                'tomar',
+                'calvo',
+                'reter',
+                'vital',
+                'favor',
+                'bravo',
+                'grato',
+                'vivaz',
+                'legal',
+                'laico',
+                'burro',
+                'olhar',
+                'possa',
+                'levar',]
 
 let wordListDay = {'22/08/2022': 'SAGAZ',
-                '23/08/2022': 'MEXER',}
-                // 'termo',
-                // 'nobre',
-                // 'senso',
-                // 'algoz',
-                // 'afeto',
-                // 'plena',
-                // 'sutil',
-                // 'vigor',
-                // 'fazer',
+                '23/08/2022': 'MEXER',
+                '24/08/2022': 'TERMO',
+                '25/08/2022': 'NOBRE',
+                '26/08/2022': 'SENSO',
+                '27/08/2022': 'ALGOZ',
+                '28/08/2022': 'AFETO',
+                '29/08/2022': 'PLENA',
+                '30/08/2022': 'SUTIL',
+                '31/08/2022': 'VIGOR',
+                '01/09/2022': 'FAZER',}
                 // 'audaz',
                 // 'assim',
                 // 'sanar',
@@ -257,7 +292,42 @@ let wordListDay = {'22/08/2022': 'SAGAZ',
                 // 'posso',
                 // 'visar',
                 // 'temer',
-                // 'acaso',}
+                // 'acaso',
+                // 'pleno',
+                // 'puder',
+                // 'valor',
+                // 'cisma',
+                // 'bruma',
+                // 'lugar',
+                // 'afins',
+                // 'certo',
+                // 'gerar',
+                // 'obter',
+                // 'crise',
+                // 'matiz',
+                // 'praxe',
+                // 'senil',
+                // 'havia',
+                // 'todos',
+                // 'fluxo',
+                // 'enfim',
+                // 'abrir',
+                // 'ritmo',
+                // 'falso',
+                // 'tomar',
+                // 'calvo',
+                // 'reter',
+                // 'vital',
+                // 'favor',
+                // 'bravo',
+                // 'grato',
+                // 'vivaz',
+                // 'legal',
+                // 'laico',
+                // 'burro',
+                // 'olhar',
+                // 'possa',
+                // 'levar',}
 
 // let guessList = ["aahed", "aalii", "aargh", "aarti", "abaca", "abaci", "abacs", "abaft",]
 
@@ -286,6 +356,8 @@ function intialize() {
                     tile.classList.add("correct");
                 } else if (tile.innerHTML == word[0] || tile.innerHTML == word[1] || tile.innerHTML == word[2] || tile.innerHTML == word[3] || tile.innerHTML == word[4]){
                     tile.classList.add("present")
+                } else {
+                    tile.classList.add("absent");
                 }
             }else if (r == 0){
                 tile.innerText = ''
@@ -296,6 +368,8 @@ function intialize() {
                     tile.classList.add("correct");
                 } else if (tile.innerHTML == word[0] || tile.innerHTML == word[1] || tile.innerHTML == word[2] || tile.innerHTML == word[3] || tile.innerHTML == word[4]){
                     tile.classList.add("present")
+                } else {
+                    tile.classList.add("absent");
                 }
             }else if (r == 1){
                 tile.innerText = ''
@@ -306,6 +380,8 @@ function intialize() {
                     tile.classList.add("correct");
                 } else if (tile.innerHTML == word[0] || tile.innerHTML == word[1] || tile.innerHTML == word[2] || tile.innerHTML == word[3] || tile.innerHTML == word[4]){
                     tile.classList.add("present")
+                } else {
+                    tile.classList.add("absent");
                 }
             }else if (r == 2){
                 tile.innerText = ''
@@ -316,6 +392,8 @@ function intialize() {
                     tile.classList.add("correct");
                 } else if (tile.innerHTML == word[0] || tile.innerHTML == word[1] || tile.innerHTML == word[2] || tile.innerHTML == word[3] || tile.innerHTML == word[4]){
                     tile.classList.add("present")
+                } else {
+                    tile.classList.add("absent");
                 }
             }else if (r == 3){
                 tile.innerText = ''
@@ -326,6 +404,8 @@ function intialize() {
                     tile.classList.add("correct");
                 } else if (tile.innerHTML == word[0] || tile.innerHTML == word[1] || tile.innerHTML == word[2] || tile.innerHTML == word[3] || tile.innerHTML == word[4]){
                     tile.classList.add("present")
+                } else {
+                    tile.classList.add("absent");
                 }
             }else if (r == 4){
                 tile.innerText = ''
@@ -336,6 +416,8 @@ function intialize() {
                     tile.classList.add("correct");
                 } else if (tile.innerHTML == word[0] || tile.innerHTML == word[1] || tile.innerHTML == word[2] || tile.innerHTML == word[3] || tile.innerHTML == word[4]){
                     tile.classList.add("present")
+                } else {
+                    tile.classList.add("absent");
                 }
             }else if (r == 5){
                 tile.innerText = ''
